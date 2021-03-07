@@ -36,7 +36,7 @@
 
 #define MOD 17
 
-// Fourth root of 1
+// Primitive fourth root of 1
 const int i = 4;
 
 void print_poly(const char *s, const int *a) {
@@ -71,7 +71,7 @@ int div(int a, int b) {
 }
 
 // Forward Fourier Transform: converts polynomial coefficients into polynomial evaluations at roots of unity
-// The roots of unity we are using are [1, i, -1, -i] in that order.
+// The roots of unity we are using are [1, 4, 16, 13] in that order.
 void eval_from_poly(int *eval, const int *coeffs) {
     int c0_p_c2 = add(coeffs[0], coeffs[2]);
     int c0_m_c2 = sub(coeffs[0], coeffs[2]);
@@ -84,7 +84,7 @@ void eval_from_poly(int *eval, const int *coeffs) {
 }
 
 // Reverse Fourier Transform: converts polynomial evaluations at roots of unity into polynomial coefficients
-// The roots of unity we are using are [1, i, -1, -i] in that order.
+// The roots of unity we are using are [1, 4, 16, 13] in that order.
 void poly_from_eval(int *coeffs, const int *eval) {
     int c0_p_c2 = add(eval[0], eval[2]);
     int c0_m_c2 = sub(eval[0], eval[2]);
@@ -131,9 +131,9 @@ int main() {
     print_poly("Data encoded", data_eval);
 
     // Lose part of the data. In this case, lose
-    // -  position 1, corresponding to r^1 = i
-    // -  position 2, correspoding to r^2 = -1
-    // But could be any two elements. r is our fourth-root of unity, i.
+    // -  position 1, corresponding to r^1 = 4
+    // -  position 2, correspoding to r^2 = 16
+    // But could be any two elements. r is our fourth-root of unity, 4.
     data_eval[1] = 0;
     data_eval[2] = 0;
     print_poly("Data with missing", data_eval);
