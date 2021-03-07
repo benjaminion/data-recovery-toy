@@ -6,8 +6,8 @@ See the accompanying write-up [here](https://hackmd.io/@benjaminion/data_recover
 
 There are two versions:
 
-1. A version that encodes the data and does the calculations over the complex integers. This uses _i_ as the primitive fourth root of unity, giving the roots for the fourier transforms as [1, i, -1, -i]. Find it in _complex.c_.
-2. A version that encodes the data and does the calculations over the integers mod 17, a finite field. This uses 4 as the primitive fourth root of unity, giving the roots for the fourier transforms as [1, 4, 16, 13]. Find it in _finite.c_.
+1. A version that encodes the data and does the calculations over the complex integers. This uses _i_ as the primitive fourth root of unity, giving the roots for the Fourier transforms as [1, i, -1, -i]. Find it in _complex.c_.
+2. A version that encodes the data and does the calculations over the integers modulo 17, a finite field. This uses 4 as the primitive fourth root of unity, giving the roots for the Fourier transforms as [1, 4, 16, 13]. Find it in _finite.c_.
 
 ## Compile
 
@@ -33,7 +33,7 @@ Or choose your favourite C compiler.
 
 ## Output
 
-Note that, if you substitue `i = 4` in the output from _complex.c_, and make everything positive modulo 17, you end up with exactly the same output as from _finite.c_.
+Note that, if you substitute `i = 4` in the output from _complex.c_, and make everything positive modulo 17, you end up with exactly the same output as from _finite.c_.
 
 From _complex.c_
 
